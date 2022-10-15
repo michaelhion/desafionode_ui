@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
       {label: 'Login' , routerLink:['login']}
   ];
   
-  this.home = {icon: 'pi pi-home',routerLink:['']};
+  this.home = {icon: 'pi pi-home',routerLink:['/home']};
   }
 
 }

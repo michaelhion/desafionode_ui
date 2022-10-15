@@ -7,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit(): void {
+    localStorage.removeItem('token')
   }
 
 }

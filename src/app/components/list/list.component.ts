@@ -25,7 +25,7 @@ export class ListComponent implements OnInit {
     this.cols = [
         { field: 'name', header: 'Nome' },
         { field: 'email', header: 'Email' },
-        { field: 'birthDay', header: 'Data Nascimento', date: 'dd/MM/yyyy'},
+        { field: 'birthDay', header: 'Data Nascimento', format: 'dd/MM/YYYY'},
         { field: 'password', header: 'Senha'},
         { field: 'address', header: 'Endereço'},
         { field: 'phone_number', header: 'Telefone'},
