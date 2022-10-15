@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { JwtModel } from '../models/jwt.mode';
+import { AuthService } from '../services/auth.service';
 import { RestService } from '../services/rest.service';
 
 @Component({
@@ -8,25 +10,22 @@ import { RestService } from '../services/rest.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-    loginForm!: FormGroup;
-    
-    submitted = false;
+  jwtModel: JwtModel = new Input;
     
   constructor(
-    private service : RestService
+    private service : RestService,
+    private authService : AuthService,
+    private router :Router
   ) { }
 
   ngOnInit(): void {
-    this.loginForm = new FormGroup({
-      'username': new FormControl('', Validators.required),
-      'password': new FormControl('', Validators.required)
-  });
   }
 
-  onSubmit(){
-    console.log("enviado");
-    
-    alert(JSON.stringify(this.loginForm.value));
+  login(jwtModel : JwtModel){
+    this.service.login(jwtModel.username,jwtModel.password).subscribe(
+      (data)=> localStorage.setItem('token', data.access_token)
+      );
+    this.router.navigate(['home'])
+    this.authService.isAuthenticated();
   }
 }

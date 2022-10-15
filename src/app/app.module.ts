@@ -23,9 +23,12 @@ import {ButtonModule} from 'primeng/button';
 import {DropdownModule} from 'primeng/dropdown';
 import {InputTextModule} from 'primeng/inputtext';
 import { PanelModule } from 'primeng/panel'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientXsrfModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
+import { AuthGuard } from './services/auth.guard';
+
+
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { HttpClientXsrfModule } from '@angular/common/http';
     AddComponent,
     HomeComponent,
     LogoutComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -56,8 +60,22 @@ import { HttpClientXsrfModule } from '@angular/common/http';
     HttpClientXsrfModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    PanelModule
+    PanelModule,
+    JwtModule.forRoot({
+      config: {
+        // ...
+        tokenGetter: () => {
+          return localStorage.getItem("token");
+        },
+      },
+    },
+    ),
   ],
+  providers:[
+    AuthGuard,
+    
+  ],
+  exports:[],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
