@@ -36,11 +36,11 @@ export class RestService {
   }
 
   edit(client : ClientModel):Observable<ClientModel>{
-    return this.http.put<ClientModel>(this.apiUrl, client,{headers:this.headers});
+    return this.http.put<ClientModel>(this.apiUrl + '/' +client.id, client,{headers:this.headers});
   }
 
   delete(id:number) : Observable<ClientModel>{
-    return this.http.delete<ClientModel>(this.apiUrl + id,{headers:this.headers});
+    return this.http.delete<ClientModel>(this.apiUrl + '/' +id,{headers:this.headers});
   }
 
   

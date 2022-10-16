@@ -1,12 +1,13 @@
 export interface ClientModel{
-    
-        email: string;
+        id:number;
         name: string;
-        birthDay: Date;
+        email: string;
+        birthDay: string;
+        address: string; 
         password: string;
+        phone_number: string;
         spouse: string;
         son_name: string;
-        address: string; 
-        phone_number: string;
+        zip_code: string;
     
 }
