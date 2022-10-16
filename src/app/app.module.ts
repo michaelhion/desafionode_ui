@@ -8,7 +8,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { ListComponent } from './components/list/list.component';
 import { LoginComponent } from './login/login.component';
-import { AddComponent } from './components/add/add.component';
 import { HomeComponent } from './components/home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 
@@ -28,6 +27,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './services/auth.guard';
 
+import {ProgressBarModule} from 'primeng/progressbar';
+import {FileUploadModule} from 'primeng/fileupload';
+import {ToolbarModule} from 'primeng/toolbar';
+import {RatingModule} from 'primeng/rating';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {InputNumberModule} from 'primeng/inputnumber';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import {InputMaskModule} from 'primeng/inputmask';
 
 
 @NgModule({
@@ -36,7 +46,6 @@ import { AuthGuard } from './services/auth.guard';
     HeaderComponent,
     ListComponent,
     LoginComponent,
-    AddComponent,
     HomeComponent,
     LogoutComponent,
     
@@ -61,6 +70,15 @@ import { AuthGuard } from './services/auth.guard';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     PanelModule,
+    ProgressBarModule,
+    FileUploadModule,
+    ToolbarModule,
+    RatingModule,
+    RadioButtonModule,
+    InputNumberModule,
+    ConfirmDialogModule,
+    InputTextareaModule,
+    InputMaskModule,
     JwtModule.forRoot({
       config: {
         // ...
@@ -73,7 +91,8 @@ import { AuthGuard } from './services/auth.guard';
   ],
   providers:[
     AuthGuard,
-    
+    MessageService,
+    ConfirmationService
   ],
   exports:[],
   bootstrap: [AppComponent]
