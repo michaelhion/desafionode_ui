@@ -23,7 +23,10 @@ export class LoginComponent implements OnInit {
 
   login(jwtModel : JwtModel){
     this.service.login(jwtModel.username,jwtModel.password).subscribe(
-      (data)=> localStorage.setItem('token', data.access_token)
+      (data)=> localStorage.setItem('token', data.access_token),
+      
+      
+      
       );
     this.router.navigate(['home'])
     this.authService.isAuthenticated();

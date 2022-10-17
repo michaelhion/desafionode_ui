@@ -38,7 +38,9 @@ import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import {InputMaskModule} from 'primeng/inputmask';
-
+import { AddComponent } from './components/add/add.component';
+import { PasswordModule } from "primeng/password";
+import { DividerModule } from "primeng/divider";
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import {InputMaskModule} from 'primeng/inputmask';
     LoginComponent,
     HomeComponent,
     LogoutComponent,
+    AddComponent,
     
   ],
   imports: [
@@ -79,6 +82,8 @@ import {InputMaskModule} from 'primeng/inputmask';
     ConfirmDialogModule,
     InputTextareaModule,
     InputMaskModule,
+    PasswordModule,
+    DividerModule,
     JwtModule.forRoot({
       config: {
         // ...
