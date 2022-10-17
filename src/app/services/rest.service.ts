@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ClientModel } from '../models/clientModel';
 import { JwtModel } from '../models/jwt.mode';
+import { UserModel } from '../models/userModel';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,10 @@ export class RestService {
 
   add(client : ClientModel):Observable<ClientModel>{
     return this.http.post<ClientModel>(this.apiUrl, client,{headers:this.headers});
+  }
+
+  addUser(user : UserModel):Observable<UserModel>{
+    return this.http.post<UserModel>(this.baseUrl + 'users', user);
   }
 
   login(username: string, password : string): Observable<JwtModel>{

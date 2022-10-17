@@ -1,0 +1,19 @@
+<div class="container">
+    <h3>Cadastro Novos Usuários</h3>
+    <form>
+        <input type="text" placeholder="nome" name="name" [(ngModel)]="user.name">
+        <input type="text" placeholder="username" name="username" [(ngModel)]="user.username">
+        <input type="text" placeholder="email" name="email" [(ngModel)]="user.email">
+        <input type="text" placeholder="zip_code" name="zip_code" [(ngModel)]="user.zip_code" (blur)="fillAddress(user.zip_code)">
+        <input type="text" placeholder="address" name="address" [(ngModel)]="user.address">
+        <input type="text" placeholder="city_name" name="city_name" [(ngModel)]="user.city_name">
+        <input type="text" placeholder="state_name" name="state_name" [(ngModel)]="user.state_name">
+        <input type="text" placeholder="spouse" name="spouse" [(ngModel)]="user.spouse">
+        <input type="text" placeholder="son_name" name="son_name" [(ngModel)]="user.son_name">
+        <input type="text" placeholder="phone_number" name="name" [(ngModel)]="user.phone_number">
+        <input type="text" placeholder="birthDay" name="birthDay" [(ngModel)]="user.birthDay" >
+        <input type="password" placeholder="password" name="password" [(ngModel)]="user.password" >
+    </form>
+    <input type="submit" value="create" (click)="send(user)">
+
+</div>
