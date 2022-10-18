@@ -1,27 +1,29 @@
 input{
-    display: block;
     margin-top: 15px;
     border-radius: 5px;
     border:  solid 1px rgb(101, 96, 96);
 }
 
 label{
-    margin-left: 15px;
+    margin-left: 75px;
     margin-top: 15px;
-    margin-bottom: -8px;
+    
 }
 
 input{
     width: 230px;
-    margin-left: 15px;
+    margin-left: 75px;
 }
 
 .container{
     margin-left: 50px;
     box-sizing: border-box;
-    display: inline-flex;
+    
 }
 
+.row{
+    display: inline-flex;
+}
 
 label, p{
     display: block;
@@ -46,6 +48,7 @@ label, p{
 .col-12 {width: 100%;}
 
 .row::after {
+    
     content: "";
     clear: both;
     display: table;

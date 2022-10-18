@@ -2,73 +2,84 @@
 <div class="container">
     
     <div class="row">
-        <div>
-            <label for="name">Name</label>
-            <input type="text" pInputText name="name" [(ngModel)]="user.name" />
-        </div>
+        <div class="col-12">
+            <div class="col-3">
+                <label for="name">Name</label>
+                <input type="text" pInputText name="name" [(ngModel)]="user.name" />
+            </div>
+    
+            <div class="col-3">
+                <label for="username">Username</label>
+                <input type="text" pInputText name="username" [(ngModel)]="user.username" />
+            </div>
+    
+            <div class="col-3">
+                <label for="email">Email</label>
+                <input type="text" pInputText name="email" [(ngModel)]="user.email" />
+            </div>
 
-        <div>
-            <label for="username">Username</label>
-            <input type="text" pInputText name="username" [(ngModel)]="user.username" />
-        </div>
-
-        <div>
-            <label for="email">Email</label>
-            <input type="text" pInputText name="email" [(ngModel)]="user.email" />
         </div>
 
     </div>
 
 
     <div class="row">
-        <div>
-            <label for="zip_code">Zip Code</label>
-            <input type="text" pInputText name="zip_code" [(ngModel)]="user.zip_code"
-                (blur)="fillAddress(user.zip_code)" />
-        </div>
+        <div class="col-12">
+            <div class="col-3">
+                <label for="zip_code">Zip Code</label>
+                <input type="text" pInputText name="zip_code" [(ngModel)]="user.zip_code"
+                    (blur)="fillAddress(user.zip_code)" />
+            </div>
+    
+            <div class="col-3">
+                <label for="address">Address</label>
+                <input type="text" pInputText name="address" [(ngModel)]="user.address" />
+            </div>
+            <div class="col-3">
+                <label for="city_name">City Name</label>
+                <input type="text" pInputText name="city_name" [(ngModel)]="user.city_name" />
+            </div>
 
-        <div>
-            <label for="address">Address</label>
-            <input type="text" pInputText name="address" [(ngModel)]="user.address" />
-        </div>
-        <div>
-            <label for="city_name">City Name</label>
-            <input type="text" pInputText name="city_name" [(ngModel)]="user.city_name" />
         </div>
     </div>
 
     <div class="row">
-        <div>
-            <label for="state_name">State Name</label>
-            <input type="text" pInputText name="state_name" [(ngModel)]="user.state_name" />
+        <div class="col-12">
+            <div class="col-3" >
+                <label for="state_name">State Name</label>
+                <input type="text" pInputText name="state_name" [(ngModel)]="user.state_name" />
+            </div>
+            <div class="col-3" >
+                <label for="spouse">Spouse</label>
+                <input type="text" pInputText name="spouse" [(ngModel)]="user.spouse" />
+            </div>
+    
+    
+            <div class="col-3" style="margin-left: 75px;">
+                <label for="phone_number" style="margin-left: -1px;">Phone Number</label><br>
+                <p-inputMask  mask="(99) 999-9999" [(ngModel)]="user.phone_number" placeholder="(99) 99999-9999" name="name"
+                    [(ngModel)]="user.phone_number"></p-inputMask>
+            </div>
         </div>
-        <div>
-            <label for="spouse">Spouse</label>
-            <input type="text" pInputText name="spouse" [(ngModel)]="user.spouse" />
-        </div>
-
-
-        <div style="margin-left: 15px;">
-            <label for="phone_number">Phone Number</label><br>
-            <p-inputMask mask="(99) 999-9999" [(ngModel)]="user.phone_number" placeholder="(99) 99999-9999" name="name"
-                [(ngModel)]="user.phone_number"></p-inputMask>
-        </div>
+        
     </div>
 
     <div class="row">
-        <div style="margin-left: 15px;">
-            <label for="basic">BirthDay</label><br>
-            <p-calendar inputId="basic" [(ngModel)]="user.birthDay" name="birthDay" [(ngModel)]="user.birthDay">
-            </p-calendar>
-        </div>
-        <div>
-            <label for="son_name">Son Name</label>
-            <input type="text" pInputText name="son_name" [(ngModel)]="user.son_name" />
-        </div>
-        <div>
-            <label for="password" style="margin-left: 15px;">Password</label><br>
-            <p-password [(ngModel)]="user.password" [toggleMask]="true" name="password" [(ngModel)]="user.password">
-            </p-password>
+        <div class="col-12">
+            <div  class="col-3" style="margin-left: 75px;margin-top:-5px;">
+                <label for="basic" style="margin-left: -1px;">BirthDay</label><br>
+                <p-calendar inputId="basic" [(ngModel)]="user.birthDay" name="birthDay" [(ngModel)]="user.birthDay">
+                </p-calendar>
+            </div>
+            <div class="col-3" style="margin-left: -70px;">
+                <label for="son_name">Son Name</label>
+                <input type="text" pInputText name="son_name" [(ngModel)]="user.son_name" />
+            </div>
+            <div class="col-3" style="margin-left: 95px;margin-top:-5px;">
+                <label for="password" style="margin-left: -1px;">Password</label><br>
+                <p-password [(ngModel)]="user.password" [toggleMask]="true" name="password" [(ngModel)]="user.password">
+                </p-password>
+            </div>
         </div>
     </div>
 </div>
